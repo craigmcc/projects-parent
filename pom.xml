@@ -92,6 +92,13 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- Jackson Annotations -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson-annotations}</version>
+            </dependency>
+
             <!-- Jackson Formatting for LocalDateTime and friends -->
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -159,11 +166,36 @@
                 <type>pom</type>
             </dependency>
 
+            <!-- Glassfish Embedded Extra APIs -->
+            <dependency>
+                <groupId>org.glassfish.main.extras</groupId>
+                <artifactId>glassfish-embedded-all</artifactId>
+                <version>${glassfish-embedded-all.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- Hamcrest Matchers for tests -->
             <dependency>
                 <groupId>org.hamcrest</groupId>
                 <artifactId>java-hamcrest</artifactId>
                 <version>${java-hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Arquillian BOM (Bill of Materials) -->
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${arquillian-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- Glassfish Arquillian Embedded Server Support -->
+            <dependency>
+                <groupId>org.jboss.arquillian.container</groupId>
+                <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+                <version>${arquillian-glassfish-embedded.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -219,6 +251,34 @@
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
                 <version>${spring-data-jpa.version}</version>
+            </dependency>
+
+            <!-- Wildfly Arquillian Managed Server Support -->
+            <dependency>
+                <groupId>org.wildfly.arquillian</groupId>
+                <artifactId>wildfly-arquillian-container-managed</artifactId>
+                <version>${wildfly-arquillian-container-managed.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>sun.jdk</groupId>
+                        <artifactId>jconsole</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!--> Wildfly Arquillian Remote Server Support -->
+            <dependency>
+                <groupId>org.wildfly</groupId>
+                <artifactId>wildfly-arquillian-container-remote</artifactId>
+                <version>${wildfly-arquillian-container-remote.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>sun.jdk</groupId>
+                        <artifactId>jconsole</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
         </dependencies>
@@ -280,8 +340,12 @@
         <maven.repository.url>${maven.repository.protocol}://repository.jboss.org/nexus/content/groups/public/</maven.repository.url>
 
         <!-- Version Dependencies -->
+        <arquillian-bom.version>1.6.0.Final</arquillian-bom.version>
+        <arquillian-glassfish-embedded.version>1.0.2</arquillian-glassfish-embedded.version>
         <commons-lang3.version>3.10</commons-lang3.version>
         <equalsverifier.version>3.3</equalsverifier.version>
+        <glassfish-embedded-all.version>5.1.0</glassfish-embedded-all.version>
+        <jackson-annotations>2.11.0</jackson-annotations>
         <jackson-datatype-jsr310.version>2.11.0</jackson-datatype-jsr310.version>
         <java-hamcrest.version>2.0.0.0</java-hamcrest.version>
         <javax-inject.version>1</javax-inject.version>
@@ -297,6 +361,8 @@
         <spring-data-jpa.version>2.3.0.RELEASE</spring-data-jpa.version>
         <spring-framework-bom.version>5.2.6.RELEASE</spring-framework-bom.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
+        <wildfly-arquillian-container-managed.version>2.2.0.Final</wildfly-arquillian-container-managed.version>
+        <wildfly-arquillian-container-remote.version>8.2.1.Final</wildfly-arquillian-container-remote.version>
 
     </properties>
 
