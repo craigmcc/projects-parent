@@ -231,6 +231,20 @@
                 <scope>test</scope>
             </dependency>
 
+            <!-- Jersey JAX-RS Client -->
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>${jersey-client.version}</version>
+            </dependency>
+
+            <!-- Jersey JAX-RS Jackson JSON Provider -->
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-json-jackson</artifactId>
+                <version>${jersey-media-json-jackson.version}</version>
+            </dependency>
+
             <!-- Arquillian BOM (Bill of Materials) -->
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
@@ -405,6 +419,8 @@
         <javax-persistence-api.version>2.2</javax-persistence-api.version>
         <javax-transaction-api.version>1.3</javax-transaction-api.version>
         <javax-ws-rs-api.version>2.1.1</javax-ws-rs-api.version>
+        <jersey-client.version>2.31</jersey-client.version>
+        <jersey-media-json-jackson.version>2.31</jersey-media-json-jackson.version>
         <jboss-javaee-all-8.0.version>1.0.4.Final</jboss-javaee-all-8.0.version>
         <junit.version>4.13</junit.version>
         <junit-jupiter.version>5.6.2</junit-jupiter.version>
