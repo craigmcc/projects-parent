@@ -71,6 +71,12 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven-source-plugin.version}</version>
                 <executions>
@@ -238,6 +244,13 @@
                 <version>${jersey-client.version}</version>
             </dependency>
 
+            <!-- Jersey JAX-RS Dependency Injection Module -->
+            <dependency>
+                <groupId>org.glassfish.jersey.inject</groupId>
+                <artifactId>jersey-hk2</artifactId>
+                <version>${jersey-hk2.version}</version>
+            </dependency>
+
             <!-- Jersey JAX-RS Jackson JSON Provider -->
             <dependency>
                 <groupId>org.glassfish.jersey.media</groupId>
@@ -386,6 +399,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-war-plugin.version>3.2.3</maven-war-plugin.version>
@@ -419,7 +433,8 @@
         <javax-persistence-api.version>2.2</javax-persistence-api.version>
         <javax-transaction-api.version>1.3</javax-transaction-api.version>
         <javax-ws-rs-api.version>2.1.1</javax-ws-rs-api.version>
-        <jersey-client.version>2.31</jersey-client.version>
+        <jersey-client.version>2.31</jersey-client.version>  <!-- Jersey versions should all match -->
+        <jersey-hk2.version>2.31</jersey-hk2.version>
         <jersey-media-json-jackson.version>2.31</jersey-media-json-jackson.version>
         <jboss-javaee-all-8.0.version>1.0.4.Final</jboss-javaee-all-8.0.version>
         <junit.version>4.13</junit.version>
